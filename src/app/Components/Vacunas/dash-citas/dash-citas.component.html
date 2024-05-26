@@ -1,0 +1,73 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 mt-3">
+            <h1 style="color: #015DB1;"> <img src="../../../../assets/images/bright-green-tick-checkmark-icon-free-png.png" width="30px" height="30px" alt="">  Registro concluido</h1>
+        </div>
+        <div class="col-6 mt-3 ">
+            <button class="btn" (click)="cancelarcita()" [disabled]="datosCitas.sql.length == 0" style="background: #a10808; color: white; min-height: 30px;border-radius:11px; float:inline-end;">
+                <svg xmlns="http://www.w3.org/2000/svg" color="whith    " width="15" height="15" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                </svg>
+                Quiero canselar mi cita
+            </button>
+        </div>
+    
+        <div class="card row" style="width:100%; height: 150px; background-color:white;   overflow:hidden; margin: 0px auto; box-shadow: -2px 11px 14px #ddd; border-radius: 3px;">
+            <div class=" col-6 row mt-5">
+                <div class="col-2">CURP:</div>
+                <div class="col-10">{{datos.tCURP}}</div>
+                <div class="col-2">Nombre:</div>
+                <div class="col-10">{{datos.NombreUsuario}}</div>
+            </div>
+            <div class="col-6 row">
+                <div class="col row" style="font-size:14p; height:70%; width: 60%;  margin-left: auto; margin-right: auto;margin-top:10px">
+                    <div class="col-3 mt-4">
+                        <img src="../../../../assets/images/Group 5447.svg" width="100%" alt="">
+                    </div>    
+                    <div class="col-9 mt-4">
+                        <div style="color: #00326C;">Personas de 18 y mas</div>
+                        <div style="color: #37AEFE;">segunda docis</div>
+                        <div style="color: #FF6C00;">Aztra zeneca</div>
+                        <div style="color:#00326C">{{Municipio}}</div>
+                    </div>                         
+                </div>
+            </div>
+        </div>
+        
+        <div *ngFor="let cita of datosCitas.sql; let i = index">
+
+        
+        <div class="card row mt-3" style="width:100%; height: 150px; background-color:white;   overflow:hidden; margin: 0px auto; box-shadow: -2px 11px 14px #ddd; border-radius: 3px;">
+            
+            <div class=" col-4  mt-5">
+                <div class="col-12">Estatus :{{cita.estatus}} </div>
+                <div class="col-12 mt-1">Modulo</div>
+                <div class="col-12 mt-3">{{cita.Modulo}}</div>
+            </div>
+
+            <div class=" col-4 row mt-5">
+                <div class="col-12">Direccion:</div>
+                <div class="col-12 mt-3">{{cita.Direccion}}</div>
+            </div>
+            <div class="col-4 row  mt-5">
+                <div class="col-12 ">Fecha y hora:</div>
+                <div class="col-12 mt-3"> <button class="" style="background: #37AEFE; color: white; border-radius:11px;">{{cita.fhvacunacion}}</button></div>
+            </div>
+        </div>
+
+    </div>     
+</div>
+
+<div class="mt-5">
+    <div style="width: 100%; height: 55px; justify-content: space-evenly;" class=" row">
+        <img class="col-1" src="../../../../assets/images/flood/Group 4009@2x.png" height="100%" alt="">
+        <img  class="col-1" src="../../../../assets/images/flood/Group 4023@2x.png" height="100%" alt="">
+        <img  class="col-1" src="../../../../assets/images/flood/Group 3997@2x.png" height="100%" alt="">
+        <img  class="col-1" src="../../../../assets/images/flood/Group 3999@2x.png" height="100%" alt="">
+        <img  class="col-1" src="../../../../assets/images/flood/Group 4000@2x.png" height="100%" alt="">
+        <img  class="col-1" src="../../../../assets/images/flood/Group 4112@2x.png" height="100%" alt="">
+        <img class="col-1" src="../../../../assets/images/flood/Group 5363@2x.png" height="100%" alt="">
+    </div>
+</div>

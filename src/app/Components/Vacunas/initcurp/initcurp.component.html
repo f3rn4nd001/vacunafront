@@ -1,0 +1,126 @@
+<div>
+    <img src="../../../../assets/images/img_left.svg" alt="" class="imgsvcVizquierdo">
+    <div class="divseccionAz">
+        <img class=" divdivimagelef" src="../../../../assets/images/img_right@2x.png" alt="">
+        <div class="divdivseccionAz" >
+        <img style=" position: relative;pointer-events: none;top: 51px;left: 272px;" src="../../../../assets/images/img_back_puntos.svg" alt=""></div>
+        <div style="width: 100%; height: 55px; justify-content: space-evenly;" class=" row">
+            <img class="col-1" src="../../../../assets/images/flood/Group 4009@2x.png" height="100%" alt="">
+            <img  class="col-1" src="../../../../assets/images/flood/Group 4023@2x.png" height="100%" alt="">
+            <img  class="col-1" src="../../../../assets/images/flood/Group 3997@2x.png" height="100%" alt="">
+            <img  class="col-1" src="../../../../assets/images/flood/Group 3999@2x.png" height="100%" alt="">
+            <img  class="col-1" src="../../../../assets/images/flood/Group 4000@2x.png" height="100%" alt="">
+            <img  class="col-1" src="../../../../assets/images/flood/Group 4112@2x.png" height="100%" alt="">
+            <img class="col-1" src="../../../../assets/images/flood/Group 5363@2x.png" height="100%" alt="">
+        </div>
+    </div>
+</div>
+
+<div class="">
+    <div class="card centerdivs" style="background: 0% 0% no-repeat padding-box padding-box rgb(255, 255, 255); min-height:615px;">
+        <a href="https:/wa.me/523338233220?text=Hola, me puede dar informacion sobre " target="_blank"><button class="btnwhatssap">33 3823 3220</button></a>        
+        <div class="card-body" style="padding: 0% 10% 0% 10%;">
+            <div style="text-align: center; color:#015DB1;font-family:Nutmeg Black"> <h1>Campaña activa de vacunacion contra Covit-19 (ZMG)</h1></div>              
+                <mat-stepper linear #stepper>
+                    <mat-step [stepControl]="firstFormGroup">
+                        <form [formGroup]="firstFormGroup">       
+                            <ng-template matStepLabel>Curp</ng-template>
+                            <div id="carouselExample" class="carousel slide">
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <div class="row" style="max-height:150px; ">
+                                            <div class="col">
+                                                <div class="card" style="font-size:16px">
+                                                    <div style="padding: 5% 7% 0% 5%; height:140px">
+                                                        <img src="../../../../assets/images/Group 5447.svg" width="20%" alt="">
+                                                        <p style=" margin-bottom:0em !important;color: #00326C;">personas de 18 y mas</p>
+                                                        <p style=" margin-bottom:0em !important ; color: #37AEFE;">Primera docis</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="card" style="font-size:14px">
+                                                    <div style="padding: 5% 7% 0% 5%; height:140px">       
+                                                        <img src="../../../../assets/images/Group 5447.svg" width="20%" alt="">
+                                                        <div style="color: #00326C;">Personas de 18 y mas</div>
+                                                        <div style="color: #37AEFE;">Primera docis</div>
+                                                        <div style="color: #FF6C00;">Aztra eneca</div>
+                                                        <div style="color:#FF6C00">primera docis apricada antes del 12 de Agosto</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                 
+                                </div>
+                            </div>
+                            <hr>
+                            <h1 style="color: #37AEFE;font-family:Nutmeg ">Comenzar ahora</h1>
+                            <h2 style="font-family:Nutmeg">Ingrese su CURP para agendar una cita o para canselar una cita ya registrada</h2 >
+                            <div style="font-size:14px;" class="row" >
+                                <mat-form-field  style="font-size:14px;" appearance="outline" class="movilc col-8">
+                                    <mat-label for="tCURP"><img style="margin-right:10px" src="../../../../assets/images/ico_user.svg" width="4%" alt="">Ingrese tu CURP</mat-label>
+                                    <input (keyup)="mayusculaCURP()" [(ngModel)]="datos.tCURP" formControlName="tCURP" maxlength="18" minlength="18" id="tCURP" matInput required>
+                                    <mat-label align="end"> {{datos.tCURP ? datos.tCURP.length : 0}} / 18</mat-label>
+                                    <mat-error>La CURP es requerido</mat-error>
+                                </mat-form-field>
+                                <button class="col-3 btnCurpinicio btn btn-warning " matStepperNext  [disabled]="validadCURP == 0 ">Continuar</button>
+                            </div>
+                            <div><p style="font-size:14px"> Si no cuenta con su CURP <a href="https://www.gob.mx/curp/" target="_blank">consulte aqui</a></p></div>
+                        </form>
+                    </mat-step>
+                    <mat-step >
+                        <ng-template matStepLabel>Municipio</ng-template>
+                          
+                        <hr>
+                        <h1>En que municipio vives</h1>
+                        <div style="margin-top:38px; margin-block-end:20px; display: block; margin-left: auto; margin-right: auto; text-align: center;"><app-auto-municipios></app-auto-municipios></div>
+                        <div class="row">
+                            <button class="col-3 btnMunicipio btn btn-warning " matStepperPrevious >regresar</button>
+                            <button class="col-3 btnMunicipio btn btn-warning " matStepperNext  [disabled]="validadMunicipio == 0 ">Continuar</button>
+                        </div>
+                    </mat-step>
+                    <mat-step>
+                        <div class="col-12 row">
+                            <h1 class="col-5" style="color: #015DB1;">  {{datos.tNombreMunicipio}} |</h1><h1 class="col-7">Dosis disponibles</h1>
+                        </div>
+                        <div class="col-12"><p>Selecciona si es tu primera o segunda dosis por aplicar </p></div>
+                      
+                        <div class="row mt-3" style="max-height:150px; ">
+                            
+                            <div class="col">
+                                <div class="card" style="font-size:16px;background-color: rgb(200 200 200); background-blend-mode: soft-light;">
+                                    <div style="padding: 5% 7% 0% 5%; height:100px">
+                                        <div style="width: 30px; height: 30px; display: block; margin-left: auto; margin-right: auto; text-align: center;background:rgb(143 201 218);border-radius:81%;background-blend-mode:soft-light">
+                                            <h1 style="color: white;">1</h1>
+                                        </div>
+                                        <div class="mt-2" style="text-align: center;font-size:18px;">Primera dosis</div>
+                                        <div style="font-size:14px; text-align: center;">no disponibre por el momento</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card" style="font-size:14px">
+                                    <div style="padding: 5% 7% 0% 5%; height:100px" >   
+                                        <div style="width: 30px; height: 30px; display: block; margin-left: auto; margin-right: auto; text-align: center;background:#37AEFE;border-radius:81%">
+                                            <h1 style="color: white;">2</h1>
+                                        </div>
+                                        <div class="mt-2" style="text-align: center;font-size:20px; color: #00326C;">Segunda dosis</div>
+                                        <div style="font-size:14px; text-align: center;">Si ya tienes una dosis previa</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div>
+                        <div class="row">
+                            <button class="col-3 btnCurpinicio btn btn-warning " matStepperPrevious >regresar</button>
+                            <button class="col-3 btnCurpinicio btn btn-warning " (click)="Guardar()" >Continuar</button>
+                        </div>
+                    </div>
+                </mat-step>
+            </mat-stepper>
+        </div>
+    </div>
+</div>
+
+
+  

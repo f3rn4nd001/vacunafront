@@ -1,0 +1,10 @@
+<mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Marca</mat-label>
+    <input matInput aria-label="Marca" [matAutocomplete]="auto" [formControl]="ecodctl"  placeholder="Auto Marca" [(ngModel)]="datos.tNombre" nullValue>
+    <mat-autocomplete #auto="matAutocomplete"  [displayWith]="displayStates" (optionSelected)="selectopcion()" >
+      <mat-option *ngFor="let state of filteredStates | async" [value]="state">
+        <span>{{state.tNombre}}</span>
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+    
